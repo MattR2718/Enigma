@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "plugboard.h"
 
 int main(){
-    printf("Hello, from Enigma!\n");
-    
+    struct MappingArray *p_plugboard = InitialisePlugboard();
 }
