@@ -12,6 +12,7 @@ void printMenu(){
     printf("\nEnter Option: ");
 }
 
+
 int main(){
     struct MappingArray *p_plugboard = InitialisePlugboard();
     int option = 0;
@@ -21,8 +22,7 @@ int main(){
         switch(option){
             case 1: p_plugboard = InitialisePlugboard(); break;
             case 2: EditPlugboardMappings(p_plugboard); break;
-            case 3: DisplayPlugboardMappings(p_plugboard);
-
+            case 3: DisplayPlugboardMappings(p_plugboard); break;
             case 0: break;
             default: break; //Invalid Choice
         }
