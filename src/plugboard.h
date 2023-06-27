@@ -17,7 +17,9 @@ struct MappingArray{
 //Initialise plugboard to map A->A, B->B ... Z->Z
 struct MappingArray *InitialisePlugboard();
 //Allow user inputted plugs
-void ApplyMappings(struct MappingArray *mappings);
+void EditPlugboardMappings(struct MappingArray *mappings);
+//Display Mappings
+void DisplayPlugboardMappings(struct MappingArray *mappings);
 
 
 #endif

@@ -18,6 +18,27 @@ struct MappingArray *InitialisePlugboard(){
     return ma;
 }
 
-void ApplyMappings(struct MappingArray *mappings){
+void EditPlugboardMappings(struct MappingArray *mappings){
 
+}
+
+void DisplayPlugboardMappings(struct MappingArray *mappings){
+    
+    printf("\n+----------------------PLUGBOARD----------------------+\n| ");
+    for(int i = 0; i < mappings->numElements; i++){
+        printf("%c ", (mappings->p_mappings + i)->from);
+    }
+    printf("|\n| ");
+    for(int i = 0; i < mappings->numElements; i++){
+        printf("| ");
+    }
+    printf("|\n| ");
+    for(int i = 0; i < mappings->numElements; i++){
+        printf("v ");
+    }
+    printf("|\n| ");
+    for(int i = 0; i < mappings->numElements; i++){
+        printf("%c ", (mappings->p_mappings + i)->to);
+    }
+    printf("|\n+-----------------------------------------------------+\n\n");
 }
