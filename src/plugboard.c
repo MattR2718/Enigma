@@ -13,6 +13,8 @@ struct MappingArray *InitialisePlugboard(){
     ma->p_mappings = p_maps;
     ma->numElements = numElements;
 
+    printf("PLUGBOARD INITIALISED\n");
+
     return ma;
 }
 
