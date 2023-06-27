@@ -27,9 +27,11 @@ void EditPlugboardMappings(struct MappingArray *mappings){
     do{
         printf("MAP: ");
         scanf_s(" %c", &from);
+        from = toupper(from);
         if(from >= 'A' && from <= 'Z'){
             printf("  TO: ");
             scanf_s(" %c", &to);
+            to = toupper(to);
             if(to >= 'A' && to <= 'Z'){
                 /*
                 Can only map one letter to another letter
@@ -45,7 +47,7 @@ void EditPlugboardMappings(struct MappingArray *mappings){
                     (mappings->p_mappings + (from - 'A'))->to = to;
                     (mappings->p_mappings + (to - 'A'))->to = from;
                 }else{
-                    printf("INVALID MAPPING");
+                    printf("\033[31mINVALID MAPPING, %c MAPS TO %c ALREADY\033[0m\n", (mappings->p_mappings + (from - 'A'))->from, (mappings->p_mappings + (from - 'A'))->to);
                 }
                 
             }
@@ -73,4 +75,12 @@ void DisplayPlugboardMappings(struct MappingArray *mappings){
         printf("%c ", (mappings->p_mappings + i)->to);
     }
     printf("|\n+-----------------------------------------------------+\n\n");
+}
+
+char ApplyPlugboardMapping(struct MappingArray *mappings, char c){
+    if(c >= 'A' && c <='Z'){
+        return (mappings->p_mappings + (c - 'A'))->to;
+    }else{
+        printf("\033[31mINVALID CHAR (%c) SENT TO 'ApplyPlugboardMapping\033[0m\n", c);
+    }
 }

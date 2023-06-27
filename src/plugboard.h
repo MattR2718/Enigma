@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 struct Mapping{
     char from;
@@ -20,6 +21,8 @@ struct MappingArray *InitialisePlugboard();
 void EditPlugboardMappings(struct MappingArray *mappings);
 //Display Mappings
 void DisplayPlugboardMappings(struct MappingArray *mappings);
+//Apply mapping
+char ApplyPlugboardMapping(struct MappingArray *mappings, char c);
 
 
 #endif
